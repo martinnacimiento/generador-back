@@ -1,7 +1,7 @@
 """ MONO BITS TEST """
 from math import sqrt, pi, exp
 import scipy.integrate as integrate
-from scipy.special import np
+import math
 
 
 # Convertir la serie en 0 o 1
@@ -41,7 +41,7 @@ def Sobs(Sn, n):
 def P_value(Sobs):
     z = Sobs / sqrt(2)  #erfc
     a = 2 / sqrt(pi)
-    return a * integrate.quad(lambda x: exp(-x**2), z, np.inf)[0]
+    return a * integrate.quad(lambda x: exp(-x**2), z, math.inf)[0]
 
 
 # Realiza el test de monobits sobre una serie
